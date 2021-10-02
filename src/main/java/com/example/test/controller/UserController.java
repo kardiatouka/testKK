@@ -31,11 +31,17 @@ public class UserController {
         return ResponseEntity.ok(userService.getAllUsers());
     }
 
-    //get users by id rest api
-    @GetMapping("/{id}")
+    //get user by id rest api
+    @GetMapping("/id/{id}")
     public ResponseEntity<User> getUserById(@PathVariable("id") Long id)
     {
         return ResponseEntity.ok(userService.getUserById(id));
     }
 
+    //get user by username rest api
+    @GetMapping("/username/{username}")
+    public ResponseEntity<User> getUserByUsername(@PathVariable("username") String username)
+    {
+        return ResponseEntity.ok(userService.getUserByUsername(username));
+    }
 }

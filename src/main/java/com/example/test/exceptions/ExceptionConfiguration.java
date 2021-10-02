@@ -18,7 +18,7 @@ public class ExceptionConfiguration extends ResponseEntityExceptionHandler {
 
     @Override
     protected ResponseEntity<Object> handleHttpMessageNotReadable(HttpMessageNotReadableException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
-        String error = "Malformed JSON request";
+        String error = "Malformed JSON request: Birthday doit etre au format \"yyyy-MM-dd\" ";
         return buildResponseEntity(new ApiError(HttpStatus.BAD_REQUEST, error, ex));
     }
 

@@ -36,6 +36,12 @@ public class UserServiceImpl implements UserService {
     @Override
     public User getUserById(Long userId) {
         return userRepository.findById(userId)
-                .orElseThrow(() -> new RessourceNotFoundException("Employee not exist with id: "+ userId));
+                .orElseThrow(() -> new RessourceNotFoundException("User not exist with id: "+ userId));
+    }
+
+    @Override
+    public User getUserByUsername(String username) {
+        return userRepository.findUserByUsername(username)
+                .orElseThrow(() -> new RessourceNotFoundException("User not exist with username: "+ username));
     }
 }

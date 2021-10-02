@@ -9,4 +9,5 @@ public interface UserService {
     User saveUser(User user);
     List<User> getAllUsers();
     User getUserById(Long userId);
+    User getUserByUsername(String username);
 }
